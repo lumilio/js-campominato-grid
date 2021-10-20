@@ -40,8 +40,6 @@ else if (hardness == 3){
 
 
 
-
-
 function xxx() {
     for (let i = 0; i < cellNumber; i++) {
 
@@ -50,27 +48,26 @@ function xxx() {
         let cell = document.createElement('div');
         cell.style.width = cellDimension
         cell.style.height = cellDimension
-        cell.className = ('cell_type' , 'color')
+        cell.className = 'cell_type' , 'color'
         griglia.append(cell)     //-----------------------creo un div ripetuto e ci aggiungo una classe
 
         let theNumber = document.createElement('div');
         theNumber.innerHTML = range 
         theNumber.className = 'd-none'
-        cell.append(theNumber)
+        cell.append(theNumber)  //-----------------------creo un secondo div per ogni cella e ci metto il numero 
 
-        cell.addEventListener('click',  function () {
+
+
+        cell.addEventListener('click',  function () { //-----------------------al click modifico le classi dei div
             
-
             if (this.classList.contains("color")) {
                 this.classList.remove("color")
-                theNumber.classList.remove('d-none')
+                theNumber.classList.add('d-none')
             } else {
                 this.classList.add("color")
-                theNumber.classList.add('d-none')
+                theNumber.classList.remove('d-none')
             }
-            
         })
-      
     }
 }
 

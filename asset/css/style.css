@@ -7,15 +7,18 @@
 #container{
     width: 1000px;
     height: 1000px;
-    background-color: brown;
+    background-color: white;
     display: flex;
     flex-wrap: wrap;
 }
 .cell_type{
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .color{
-    background-color: blue;
+    background-color: aqua;
 }
 
