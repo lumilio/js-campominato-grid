@@ -50,13 +50,27 @@ function xxx() {
         let cell = document.createElement('div');
         cell.style.width = cellDimension
         cell.style.height = cellDimension
-        cell.className = 'cell_type' 
+        cell.className = ('cell_type' , 'color')
         griglia.append(cell)     //-----------------------creo un div ripetuto e ci aggiungo una classe
 
         let theNumber = document.createElement('div');
         theNumber.innerHTML = range 
         theNumber.className = 'd-none'
         cell.append(theNumber)
+
+        cell.addEventListener('click',  function () {
+            //console.log(this);
+
+            if (this.classList.contains("color")) {
+                this.classList.remove("color")
+                theNumber.classList.remove('d-none')
+            } else {
+                this.classList.add("color")
+                theNumber.classList.add('d-none')
+            }
+            //this.style.backgroundColor = "#99CBFF"
+            //this.style.color = "black"
+        })
       
     }
 }
