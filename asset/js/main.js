@@ -59,7 +59,7 @@ function xxx() {
         cell.append(theNumber)
 
         cell.addEventListener('click',  function () {
-            //console.log(this);
+            
 
             if (this.classList.contains("color")) {
                 this.classList.remove("color")
@@ -68,8 +68,7 @@ function xxx() {
                 this.classList.add("color")
                 theNumber.classList.add('d-none')
             }
-            //this.style.backgroundColor = "#99CBFF"
-            //this.style.color = "black"
+            
         })
       
     }
@@ -89,14 +88,4 @@ xxx();
 
 
 
-/* 
-cell.addEventListener('click', theNumber.classList.remove("d-none"));
-  */
-
-
-
-
-
-
-// al click mostrare il numero contenuto e colorare la cella di azzurro
 
