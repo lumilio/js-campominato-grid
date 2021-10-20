@@ -13,16 +13,47 @@ const griglia = document.getElementById('container')
 
 
 
+
+
+const myfuncion = () => {}
+
+
+let theNumber = document.createElement('div');
+cell.append(theNumber)
+theNumber.className = 'd-none'
+theNumber.innerHTML = firstRange //-----------------------
+
+
+
+
+
+
+
 if (hardness == 1){
     for (let i = 0; i < 64; i++) {
 
-        let firstRange = Math.floor(Math.random() * 100) + 1
+        
+
         let cell = document.createElement('div');
-        cell.className = 'cell_type1'      
         griglia.append(cell)
-        cell.append(firstRange)  
+        cell.className = 'cell_type1'      //-----------------------creo un div ripetuto e ci aggiungo una classe
+
+        let firstRange = Math.floor(Math.random() * 100) + 1 //-----------------------genero un numero random 
+
+        let theNumber = document.createElement('div');
+        cell.append(theNumber)
+        theNumber.className = 'd-none'
+        theNumber.innerHTML = firstRange //-----------------------
+
+        
+
+
     } 
+
 }
+
+
+
 
 
 else if (hardness == 2){
