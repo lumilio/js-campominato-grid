@@ -1,4 +1,8 @@
 
+// seleziono elemento dalla DOM
+const griglia = document.getElementById('container')
+
+
 
 
 // l'utente indica un livello di difficoltà: 1 , 2 o 3
@@ -8,82 +12,72 @@ while (hardness != '1' && hardness != '2' && hardness != '3') {
 }
 
 
-// creare una griglia di gioco diversa per ogni livello
-const griglia = document.getElementById('container')
 
-
-
-
-
-const myfuncion = () => {}
-
-
-let theNumber = document.createElement('div');
-cell.append(theNumber)
-theNumber.className = 'd-none'
-theNumber.innerHTML = firstRange //-----------------------
-
-
-
-
-
+// assegno il valore di ogni opzione
+let rangeMax;
+let cellNumber;
+let cellDimension;
 
 
 if (hardness == 1){
-    for (let i = 0; i < 64; i++) {
-
-        
-
-        let cell = document.createElement('div');
-        griglia.append(cell)
-        cell.className = 'cell_type1'      //-----------------------creo un div ripetuto e ci aggiungo una classe
-
-        let firstRange = Math.floor(Math.random() * 100) + 1 //-----------------------genero un numero random 
-
-        let theNumber = document.createElement('div');
-        cell.append(theNumber)
-        theNumber.className = 'd-none'
-        theNumber.innerHTML = firstRange //-----------------------
-
-        
-
-
-    } 
-
+    rangeMax = 100;
+    cellNumber = 64;
+    cellDimension = '125px';
 }
-
-
-
-
 
 else if (hardness == 2){
-    for (let i = 0; i < 100; i++) {
-
-        let secondRange = Math.floor(Math.random() * 81) + 1
-        let cell = document.createElement('div');
-        cell.className = 'cell_type2'
-        griglia.append(cell)
-        cell.append(secondRange)
-        
-    }
+    rangeMax = 81;
+    cellNumber = 100;
+    cellDimension = '100px';
 }
-
 
 else if (hardness == 3){
-    for (let i = 0; i < 400; i++) {
-
-        let thirdRange = Math.floor(Math.random() * 49) + 1
-        let cell = document.createElement('div');
-        cell.className = 'cell_type3'
-        griglia.append(cell)
-        cell.append(thirdRange)
-        
-    }
+    rangeMax = 49;
+    cellNumber = 400;
+    cellDimension = '50px';
 }
 
 
 
 
+
+
+function xxx() {
+    for (let i = 0; i < cellNumber; i++) {
+
+        let range = Math.floor(Math.random() * rangeMax) + 1 //-----------------------creo il numero casuale dei ivelli
+
+        let cell = document.createElement('div');
+        cell.style.width = cellDimension
+        cell.style.height = cellDimension
+        cell.className = 'cell_type' 
+        griglia.append(cell)     //-----------------------creo un div ripetuto e ci aggiungo una classe
+
+        let theNumber = document.createElement('div');
+        theNumber.innerHTML = range 
+        theNumber.className = 'd-none'
+        cell.append(theNumber)
+      
+    }
+}
+
+
+
+xxx();
+
+
+
+
+
+
+
+
+
+
+
+/* 
+cell.addEventListener('click', theNumber.classList.remove("d-none"));
+  */
 
 
 
